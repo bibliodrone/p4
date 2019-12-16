@@ -25,7 +25,7 @@ export default {
   components: {},
   data: function() {
     return {
-      links:['categories', 'homepage', 'favorites']
+      links:['categories', 'homepage', 'favorites', 'mailinglist']
     };
   },
   mounted() {

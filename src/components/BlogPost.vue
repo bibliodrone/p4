@@ -1,5 +1,5 @@
 <!-- BlogPost.vue 
-    populates list of posts in BlogPosts with info for each post
+    populates list of posts in BlogPosts' framework with info for each post
 -->
 <template>
     <div class='blog-post'>

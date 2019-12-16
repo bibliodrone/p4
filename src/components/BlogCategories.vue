@@ -3,7 +3,7 @@
     <div id = "categoriesList">
         <h3>Categories</h3>
         <ul>
-            <li v-for='(category, id) in categories' :key='id'>-{{ category }}-</li>
+            <li data-test='category-tag' v-for='(category, id) in categories' :key='id'>-{{ category }}-</li>
         </ul>
 
     </div>

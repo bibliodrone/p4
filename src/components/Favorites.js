@@ -2,9 +2,6 @@
 // Adapted from Cart.js in Zipfoods.
 export default class Favorites {
 
-    /**
-     * 
-     */
     constructor() {
         // Retrieve favorites list from local storage
         let favorites = localStorage.getItem('favorites')
