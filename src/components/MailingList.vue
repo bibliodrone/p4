@@ -49,9 +49,15 @@
                     v-model='submit.comments'
                 ></textarea>
             </div>
-            <div><button data-test='submit-info-button' type='submit'>Submit</button></div>
+
+            <div><button data-test='submit-info-button' type='submit' id = 'submitSignUp' @click='handleSubmit'>Submit</button></div>
+            
             <div class='form-feedback-error' v-if='formHasErrors'>Please correct the errors noted above</div>
         </form>
+
+        <transition name='fade'>
+            <div class='signupsubmit' data-test='signup-submit' v-if='signedUp'>Thanks for signing up!</div>
+        </transition>
     </div>
 </template>
 
@@ -79,7 +85,8 @@ export default {
     data: function() {
         return {
             submit: submit,
-            formHasErrors: false
+            formHasErrors: false,
+            signedUp: false
         };
     },
     validations: {
@@ -102,27 +109,32 @@ export default {
     methods: {
         handleSubmit: function() {
             if (!this.formHasErrors) {
-                alert("Thanks for signing up!");
-                // Axios request to the server to persist the new product
-               /*  axios
-                    .post(app.config.api + 'products.json', this.product)
-                    .then(response => {
-                        let key = response.data.name;
-                        this.$store.commit('addProduct', {
-                            [key]: this.product
-                        });
-                        this.$router.push({
-                            name: 'product',
-                            params: { slug: this.product.slug }
-                        });
-                    }); */
+                this.signedUp = true;
+                setTimeout(()=> (this.signedUp = false), 2000);
+                //alert("Thanks for signing up!");
             }
         }
-    }
+        
+    }    
 };
 </script>
 
 <style scoped>
+.signupsubmit {
+    display: table-cell;
+    border: 1px solid blue;
+    padding: 5px;
+    background: lightcyan;
+    
+}
+
+#submitSignUp
+{
+    border-radius: 3px;
+    color: green;
+    font-weight: bold;
+}
+
 form {
     margin-left: 10px;
 }

@@ -40,5 +40,19 @@ describe('Blog', () => {
     cy.contains('h1', 'Favorites');
     cy.contains('div', 'No favorites, yet');
   })
+
+  let signup = {
+    name: 'Brent G. Waldman',
+    email: 'my_email@emailserver.uk',
+    comment: 'I really love your work. I wish I could be as creative as you!'
+  }
+
+  it('visits mailinglist page', () => {
+    cy.visit('/mailing-list');
+    cy.contains('h2', 'Sign up');
+    cy.get('[data-test="submit-name-input"]').type(signup.name);
+    cy.get('[data-test="submit-email-input"]').type(signup.email);
+    cy.get('[data-test="submit-comments-textarea"]').type(signup.comment);
+  });
   
 })

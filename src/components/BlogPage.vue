@@ -56,12 +56,8 @@ export default {
             //this.$store.commit('setFavorites', post_id)
             this.addedFavorite = true;
             setTimeout(() => (this.addedFavorite = false), 2000);
-        },
-        handleSubmit: function() {
-            if(!this.formHasErrors) {
-                alert("submitted!")
-            }
         }
+        
     }
 }
 </script>
