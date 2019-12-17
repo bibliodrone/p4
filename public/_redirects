@@ -1,0 +1,4 @@
+# Netlify settings for single-page application
+# "This config file will make it so that all URLs/routes are processed via index.html,
+# and it’s similar to the .htaccess Apache config file we set up on DigitalOcean."
+/*    /index.html   200
