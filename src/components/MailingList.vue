@@ -2,12 +2,16 @@
     <div id='mailingList'>
         <h2>Sign up for future news and notifications</h2>
         <form @submit.prevent='handleSubmit'>
-
+            <!-- form submit is simulated (though validation is applied); 
+                after submit, fields are greyed out to indicate (simulated) submission 
+                they don't actually become inactive, and I wasn't quite able to get the form
+                to reset on submission. 
+                -->
             <div class='form-group'>
                 <label for='name'>Name</label>
-                <input
+                <input 
                     type='text'
-                    :class='{ "form-input-error": $v.submit.name.$error }'
+                    :class='{ "form-input-error": $v.submit.name.$error, "completed" : completed }'
                     data-test='submit-name-input'
                     id='name'
                     v-model='$v.submit.name.$model'
@@ -26,7 +30,7 @@
                 <label for='email'>Email</label>
                 <input
                     type='text'
-                    :class='{ "form-input-error": $v.submit.email.$error }'
+                    :class='{ "form-input-error": $v.submit.email.$error, "completed" : completed  }'
                     data-test='submit-email-input'
                     id='email'
                     v-model='$v.submit.email.$model'
@@ -44,6 +48,7 @@
             <div class='form-group'>
                 <label for='comments'>Comments</label>
                 <textarea
+                    :class='{"completed" : completed }'
                     data-test='submit-comments-textarea'
                     id='comments'
                     v-model='submit.comments'
@@ -86,7 +91,8 @@ export default {
         return {
             submit: submit,
             formHasErrors: false,
-            signedUp: false
+            signedUp: false,
+            completed: false,
         };
     },
     validations: {
@@ -110,6 +116,7 @@ export default {
         handleSubmit: function() {
             if (!this.formHasErrors) {
                 this.signedUp = true;
+                this.completed = true;
                 setTimeout(()=> (this.signedUp = false), 2000);
                 //alert("Thanks for signing up!");
             }
@@ -120,6 +127,9 @@ export default {
 </script>
 
 <style scoped>
+.completed {
+    background: lightgray!important;
+}
 .signupsubmit {
     display: table-cell;
     border: 1px solid blue;

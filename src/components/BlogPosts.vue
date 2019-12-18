@@ -18,12 +18,7 @@ BlogPost
     export default {
         name: 'BlogPosts',
         components: { BlogPost },
-        //data: function() {
-        //   return {
-                //posts:posts
-        //        posts: []
-        //    }
-        //},
+        
         computed: {
         posts: function() {
 

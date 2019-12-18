@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style>
+.router-link-active {
+  color: red;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
