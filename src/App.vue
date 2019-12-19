@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Gerry's Blog</h1>
     <nav>
       <ul>
         <li v-for='link in links' :key='link'>
