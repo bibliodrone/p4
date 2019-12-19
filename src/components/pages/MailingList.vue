@@ -80,9 +80,9 @@ if (process.env.NODE_ENV == 'development') {
     };
 } else {
     submit = {
-        name: '?',
+        name: '',
         comments: '',
-        email:'?'
+        email:''
     };
 }
 export default {
