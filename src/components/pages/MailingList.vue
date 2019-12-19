@@ -61,7 +61,7 @@
         </form>
 
         <transition name='fade'>
-            <div class='signupsubmit' data-test='signup-submit' v-if='signedUp'>Thanks for signing up!</div>
+            <div id='signUpThanks' data-test='signup-submit' v-if='signedUp'>Thanks for signing up!</div>
         </transition>
     </div>
 </template>
@@ -130,11 +130,12 @@ export default {
 .completed {
     background: lightgray!important;
 }
-.signupsubmit {
+#signUpThanks {
     display: table-cell;
     border: 1px solid blue;
     padding: 5px;
     background: lightcyan;
+    margin-left: 10px;
     
 }
 

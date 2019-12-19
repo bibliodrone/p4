@@ -17,9 +17,6 @@
 
 <script>
 
-// To Do: Add page showing posts matching specific categories chosen
-// by the user. This might be a more complex feature than it sounds...
-
 export default {
   name : 'app', 
   components: {},

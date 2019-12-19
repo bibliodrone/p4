@@ -1,23 +1,22 @@
-<!-- BlogPosts.vue 
+<!-- BlogHome.vue 
 Displays a summary list of blog posts with title, date, tags, using sub-component
-BlogPost
+BlogPostList
 -->
 <template>
     <div id='posts'>
-        <blog-post
+        <blog-post-list
             v-for='post in posts'
             :key= 'post.id'
             :post='post'
-        ></blog-post>
+        ></blog-post-list>
     </div>
 </template>
 <script>
-    import BlogPost from './BlogPost.vue'
-    //const axios = require('axios');
+    import BlogPostList from './BlogPostList.vue'
 
     export default {
-        name: 'BlogPosts',
-        components: { BlogPost },
+        name: 'BlogHome',
+        components: { BlogPostList },
         
         computed: {
         posts: function() {
@@ -28,10 +27,6 @@ BlogPost
         
         //preserved this code for reference
         mounted() {
-            /* this.posts = axios.get("https://my-json-server.typicode.com/bibliodrone/e28-p3-api/posts")
-            .then(response => {
-                this.posts = response.data;
-            }); */
         }
     }
 </script>

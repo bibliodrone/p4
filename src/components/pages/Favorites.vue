@@ -15,7 +15,7 @@
 
 <script>
 import Favorites from './Favorites'
-const axios = require ('axios');
+import * as app from '../../app.js'
 
 export default {
     name: 'Favorites',
@@ -26,11 +26,7 @@ export default {
             posts: []
         }; 
     },
-    /* computed: {
-        favorites: function() {
-            return this.$store.state.favorites;
-        }
-    }, */
+
     methods: {
         getPostDetails(postId) {
             return this.posts.find(({ id }) => id === postId);
@@ -43,10 +39,8 @@ export default {
         this.favorites = new Favorites();
         this.items = this.favorites.getItems();
         // Getting all post data from the mock API
-        //this.$store.dispatch('getFavorites');
-        this.posts = axios
-           .get("https://my-json-server.typicode.com/bibliodrone/e28-p3-api/posts/")
-           .then(response => (this.posts = response.data));
+        this.posts = app.axios.get(app.config.api).then(response => (this.posts = response.data));
+          
     }
 };
 </script>

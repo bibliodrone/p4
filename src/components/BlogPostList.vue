@@ -2,7 +2,7 @@
     populates list of posts in BlogPosts' framework with info for each post
 -->
 <template>
-    <div class='blog-post'>
+    <div class='blog-post-list'>
        
          <router-link :to='{ name: "posts", params: {"id" : post.id }}'>
                  <h2 class='post-title'>{{ post.title }}</h2>
@@ -18,7 +18,7 @@
 </template>
 <script>
 export default {
-    name:'BlogPost',
+    name:'BlogPostList',
     props: ['post'],
     data: function() {
         return {
@@ -39,8 +39,9 @@ export default {
     padding: 3px;
     border: 2px solid black;
     font-variant: small-caps;
+    font-size: larger;
 }
-.blog-post{
+.blog-post-list{
     margin-left: 10%;
     background-color: white;
     padding: 5px 15px 5px 5px;

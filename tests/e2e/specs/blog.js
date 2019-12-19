@@ -53,6 +53,9 @@ describe('Blog', () => {
     cy.get('[data-test="submit-name-input"]').type(signup.name);
     cy.get('[data-test="submit-email-input"]').type(signup.email);
     cy.get('[data-test="submit-comments-textarea"]').type(signup.comment);
+    cy.get('[data-test="submit-info-button"]').click();
+    // cy.get('[data-test="signup-submit"]').should('be.visble');
+    cy.contains('div', 'Thanks for signing up!');
   });
   
 })

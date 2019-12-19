@@ -3,10 +3,7 @@
 
 import { expect } from 'chai'
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import BlogPage from '@/components/BlogPage.vue'
-
-//import Favorites from '@/components/Favorites';
-//import { isIterable } from 'core-js';
+import BlogPage from '@/components/pages/BlogPage.vue'
 
 describe('BlogPage.vue', () => {
     let post = {
@@ -20,7 +17,7 @@ describe('BlogPage.vue', () => {
     it('displays a blog post page', () => {
     // for VueEx, use 'mount' instead of 'shallowMount'
         const wrapper = mount(BlogPage, {
-            //propsData: { post },
+            
         //computed property to satisfy VueEx store for testing purposes.
             computed: {
                 post: function() {

@@ -47,7 +47,8 @@ export default {
     list-style: none;
 }
 #categoriesList li {
-    line-height: 2em !important;
-    font-variant:small-caps !important;
+    line-height: 2em;
+    font-variant:small-caps;
+    font-size:larger;
 }
 </style>
