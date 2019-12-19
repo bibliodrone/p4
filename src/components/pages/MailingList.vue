@@ -46,7 +46,7 @@
             </div>
 
             <div class='form-group'>
-                <label for='comments'>Comments</label>
+                <label for='comments'>Comments (optional)</label>
                 <textarea
                     :class='{"completed" : completed }'
                     data-test='submit-comments-textarea'
